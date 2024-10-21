@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #3498db;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"],
+        .back-to-profile {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover,
+        .back-to-profile:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Profile</h1>
+    <form action="/auth/profile/edit-profile" method="POST">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" value="<%= user.username %>" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" value="<%= user.email %>" required>
+        </div>
+        <div>
+            <label for="address">Alamat</label>
+            <input type="text" name="address" value="<%= user.address %>" required>
+        </div>
+        <div>
+            <label for="gender">Jenis Kelamin</label>
+            <select name="gender" required>
+                <option value="">Pilih</option>
+                <option value="Laki-laki" <% if (user.gender === 'Laki-laki') { %>selected<% } %>>Laki-laki</option>
+                <option value="Perempuan" <% if (user.gender === 'Perempuan') { %>selected<% } %>>Perempuan</option>
+            </select>
+        </div>
+        <div>
+            <label for="phone">No. Telepon</label>
+            <input type="text" name="phone" value="<%= user.phone %>" required>
+        </div>
+        <button type="submit">Save Changes</button>
+        <a href="/auth/profile" class="back-to-profile">Back to Profile</a>
+    </form>
+</body>
+    
+</html>
+

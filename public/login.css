@@ -1,0 +1,96 @@
+.container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #3498db;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: text-color-change 2s infinite;
+}
+
+@keyframes text-color-change {
+    0% {
+        color: #3498db;
+    }
+    50% {
+        color: #2980b9;
+    }
+    100% {
+        color: #3498db;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    animation: label-fade 1s infinite;
+}
+
+@keyframes label-fade {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    animation: input-border-change 2s infinite;
+}
+
+@keyframes input-border-change {
+    0% {
+        border-color: #3498db;
+    }
+    50% {
+        border-color: #2980b9;
+    }
+    100% {
+        border-color: #3498db;
+    }
+}
+
+button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: button-color-change 2s infinite;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+@keyframes button-color-change {
+    0% {
+        background-color: #3498db;
+    }
+    50% {
+        background-color: #2980b9;
+    }
+    100% {
+        background-color: #3498db;
+    }
+}
+
+
